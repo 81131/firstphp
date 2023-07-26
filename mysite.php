@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="learncss.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&family=Tektur&family=Ubuntu+Mono:ital@1&display=swap" rel="stylesheet">
+    <title>Mark Analyzer</title>
+</head>
+
+<body>
+<div class="darkbg">
+        <form method="post">
+            <!--Name-->
+            <lable for="fname" >First Name:</lable>
+            <input type="text" id="fname" class="texi" placeholder="Ex:John" name="fname" required><br>
+            <lable for="lname">Last Name:</lable>
+            <input type="text" id="lname" class="texi" placeholder="Ex:Wick" name="lname" required><br>
+
+            <!--Class-->
+            <lable for="cname">Class:</lable>
+            <input type="text" id="cname" class="texi" placeholder="ex:12-Tech" name="cname" required><br>
+
+            <!--Subjects-->
+            <lable for="smarks">SFT:</lable>
+            <input type="text" id="smarks" class="texi" placeholder="Ex:50" name="smarks" required><br>
+            <lable for="emarks">ET:</lable>
+            <input type="text" id="emarks" class="texi" placeholder="Ex:30" name="emarks" required><br>
+            <lable for="sub3marks">
+                <select id="sub3" name="sub3">
+                    <option>ICT</option>
+                    <option>Geography</option>
+                    <option>Agri</option>
+                </select>
+            </lable>
+            <input type="text" id="sub3marks" class="texi" placeholder="Ex:70" name="sub3marks" required><br>
+            <lable for="enmarks">English</lable>
+            <input type="text" id="enmarks" class="texi" placeholder="Ex:80" name="enmarks" required><br>
+            <button name="submit" value="submit">Generate</button>
+        </form>
+    </div>
+    <div class="darkbg">     
+
+        <?php
+        if(isset($_POST['submit'])) {
+            echo $_POST["fname"], " is a ", $_POST["cname"], " student. He scored ",$_POST["smarks"]," for SFT, ",$_POST["emarks"], " for ET and "," ",$_POST["sub3marks"], "for ", $_POST["sub3"];
+        }
+        ?>
+    </div>
+</body>
+
+</html>
